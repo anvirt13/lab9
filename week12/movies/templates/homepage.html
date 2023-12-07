@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1> {{ page_title }} </h1>
+
+{% if request.user.is_authenticated %}
+
+<h3> Hi, {{user.username|title}}!</h3> 
+{% endif %}
+
+{% for movie in movies %}
+
+<div>
+
+    <h3> Movie {{ movie.id }} </h3>
+
+    <a href="{% url 'movie' movie.id %}"> {{ movie.name }} </a>
+    <p> Description : {{ movie.description }} </p>
+
+
+
+    <br>
+    <br>
+
+</div>
+{% endfor %}
+
+{% endblock %}

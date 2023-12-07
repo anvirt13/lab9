@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1> {{ page_title }} </h1>
+<h3> Movie {{ movie.id }} </h3>
+<h3>  {{ movie.name }} </h3>
+<p> Description: {{ movie.description }} </p>
+<p> Released: {{movie.year}}  </p>
+<p> Rating: {{movie.rating}} </p>
+<br>
+<p> Updated at: {{movie.updated_at}} </p>
+<p> Posted by: {{movie.posted_by}} </p>
+<br>
+</p> <strong> Curious what our users think of {{movie.name}} ? </strong><a href="{% url 'review' movie.id %}"> View Reviews </a> </p>
+
+
+
+{% if movie.posted_by == request.user %}
+
+<h5> <a href="{% url 'update' movie.id %}"> Edit Movie </a> </h5> <h5> <a href="{% url 'delete' movie.id %}"> Delete Movie </a> </h5>
+
+{% endif %}
+
+
+
+
+{% endblock %}
+
+
+
+

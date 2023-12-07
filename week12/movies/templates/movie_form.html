@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2> {{page_title}} </h2>
+
+
+<form method="post">
+{% csrf_token %}
+
+    <label> Movie Name </label>
+    {{ form.name}}
+    <br>
+    <br>
+    <label> Movie Description </label>
+    {{ form.description}}
+    <br>
+    <br>
+    <label> Movie Year </label>
+    {{ form.year}}
+    <br>
+    <br>
+    <label> Movie Rating </label>
+    {{ form.rating}}
+    <br>
+    <button type="submit"> Submit </button>
+</form>
+
+{% endblock %}

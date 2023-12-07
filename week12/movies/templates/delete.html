@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2> Delete Movie </h2>
+
+
+<form method="post">
+{% csrf_token %}
+
+    <h4> Are you sure you want to delete {{movie.name}}? </h4>
+    <br>
+    <button type="submit"> Submit </button>
+</form>
+
+{% endblock %}
